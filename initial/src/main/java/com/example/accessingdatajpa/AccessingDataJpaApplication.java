@@ -30,19 +30,21 @@ public class AccessingDataJpaApplication {
 
 			LOG.info("");
 			LOG.info("Find customers with findAll():");
-			LOG.info("------------------------------");
+			LOG.info("------------------------------------");
 			for (Customer c : repository.findAll()) {
 				LOG.info(c.toString());
 			}
 			LOG.info("");
 
-			Optional<Customer> customer = repository.findById(1L);
+			Optional<Customer> customer = repository.findById(4L);
 			if (customer.isEmpty()) throw new IllegalStateException("No such user");
 			LOG.info("Find customer by ID:");
-			LOG.info("------------------------------");
+			LOG.info("------------------------------------");
 			LOG.info(customer.get().toString());
 			LOG.info("");
 
+			LOG.info("Find customer by lastName 'Tamirov':");
+			LOG.info("------------------------------------");
 			repository.findByLastName("Tamirov").forEach(c ->
 					LOG.info(c.toString())
 			);

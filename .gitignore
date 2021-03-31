@@ -6,9 +6,12 @@ Thumbs.db
 # Build Files #
 
 bin
-target
 build/
 .gradle
+
+initial/target/*
+
+!initial/target/demo-0.0.1-SNAPSHOT.jar
 
 # Eclipse Project Files #
 
